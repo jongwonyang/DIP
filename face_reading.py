@@ -66,11 +66,15 @@ input_data = {
     ],
 }
 # 수평으로 정렬된 좌표여야 한다.
+# Must be horizontally aligned coordinates.
 # 좌표의 정밀도는 상관없다. (실수 범위)
-# 점의 갯수는 상관 없다.
+# The precision of the coordinates does not matter. (real number range)
+# 점의 갯수는 상관 없다. 
+# The number of points does not matter.
 
 
 def face_reading(data):
+    # Return result or just print the result
     process_eye(data["eye_left"])
 
 
