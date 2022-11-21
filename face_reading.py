@@ -68,3 +68,33 @@ input_data = {
 # 수평으로 정렬된 좌표여야 한다.
 # 좌표의 정밀도는 상관없다. (실수 범위)
 # 점의 갯수는 상관 없다.
+
+
+def face_reading(data):
+    process_eye(data["eye_left"])
+
+
+def process_eye(data):
+    left = min(data, key=lambda x: x[0])
+    right = max(data, key=lambda x: x[0])
+    top = max(data, key=lambda x: x[1])
+    bottom = min(data, key=lambda x: x[1])
+    width = right - left
+    height = top - bottom
+    ratio = width / height
+    # ratio
+    # (봉황눈 > 용눈) > (호랑이 > 사자 > 학 > 공작) > 원앙 > 소 > 참새 (1.0)
+    # 괄호 안은 left, right 의 높낮이로 비교
+    # https://m.blog.naver.com/knk8884/220895457093
+    # https://www.esquirekorea.co.kr/article/63686
+
+
+def process_nose(data):
+    pass
+
+
+def process_mouth(data):
+    pass
+
+
+face_reading(input_data)
