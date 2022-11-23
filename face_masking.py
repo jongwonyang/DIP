@@ -49,6 +49,10 @@ def face_masking(img_path):
     ax3.plot(b_hist,label='B',color='blue')
     ax3.legend()
     
+    # Save RGB histogram as jpg
+    extent = ax3.get_window_extent().transformed(f.dpi_scale_trans.inverted())
+    f.savefig('3.jpg',bbox_inches=extent)
+    
     ########## Image Masking #################
 
     # 1. Convert RGB to YCbCr
@@ -78,4 +82,10 @@ def face_masking(img_path):
     
     # Plot masked image
     ax2.imshow(img)
+    
+    # Save masked image as jpg
+    cv2.imwrite('./2.jpg',img)
+    
     plt.show()
+    
+face_masking('C:\\DIP\\Face_Reading_AI\\data\\face_yellow.jpg')
