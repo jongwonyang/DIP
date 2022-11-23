@@ -87,5 +87,3 @@ def face_masking(img_path):
     cv2.imwrite('./2.jpg',img)
     
     plt.show()
-    
-face_masking('C:\\DIP\\Face_Reading_AI\\data\\face_yellow.jpg')
