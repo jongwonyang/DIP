@@ -1,6 +1,16 @@
 import cv2
 import mediapipe as mp
 
+faceDetails_eye_left = set()
+faceDetails_eye_right = set()
+faceDetails_nose = set()
+faceDetails_mouth = set()
+
+mpDraw = mp.solutions.drawing_utils
+mpFaceMesh = mp.solutions.face_mesh
+faceMesh = mpFaceMesh.FaceMesh(max_num_faces=1)
+
+
 def face_alignment(data):
  imgRBG = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
 results = faceMesh.process(imgRBG)
