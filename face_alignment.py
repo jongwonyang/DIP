@@ -18,6 +18,8 @@ drawSpec = mpDraw.DrawingSpec(thickness=1, circle_radius=1)
 
 
 def face_alignment(data):
+    img = cv2.imread('5.jpg')
+
     imgRBG = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
 
     results = faceMesh.process(imgRBG)
@@ -64,7 +66,6 @@ def face_alignment(data):
     input_data["mouth"].append((results.multi_face_landmarks[0].landmark[291].x,
                                 results.multi_face_landmarks[0].landmark[291].y))
 
-    cv2.imshow('', img)
 
     # Not required, this is just for testing
     # 필수는 아닙니다. 테스트용입니다
@@ -76,6 +77,6 @@ def face_alignment(data):
     # print("_______")
     # print(input_data["eye_right"])
 
-    return input_data
+    cv2.imwrite('./output.jpg', img)
 
-    # cv2.imwrite('./output.jpg', )
+    return input_data

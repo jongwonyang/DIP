@@ -136,7 +136,6 @@ def face_masking(img_path):
     
     # Show cropped image
     ax4.imshow(crop_img)
-    
     # Save cropped image
     extent = ax4.get_window_extent().transformed(f.dpi_scale_trans.inverted())
     f.savefig('5.jpg',bbox_inches=extent)
